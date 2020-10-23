@@ -1,0 +1,49 @@
+:root {
+  /*==== scroll ====*/
+  --scroll-width: 0;
+
+  /*==== colors ====*/
+  --c-white: #fff;
+  --c-black: #000;
+
+  /*==== font family ====*/
+  --ff-title-amatic: 'Amatic SC', cursive;
+  --ff-title-heucha: 'Neucha', cursive;
+  --ff-main-text: 'Open Sans', sans-serif;
+
+  /*==== grid system ====*/
+  --grid-side: 0.625rem;
+  --grid-columns: 6;
+  --grid-columns-gap: 1.25rem;
+  --grid-row: 1.25rem;
+  --grid-column-with: calc(
+    (
+        100vw - var(--scroll-width) - var(--grid-side) * 2 -
+          var(--grid-columns-gap) * (var(--grid-columns) - 1)
+      ) / var(--grid-columns)
+  );
+}
+
+@media screen and (min-width: 768px) {
+  :root {
+    /*==== gris system ====*/
+    --grid-side: 2.25rem;
+    --grid-columns: 12;
+  }
+}
+
+@media screen and (min-width: 1366px) {
+  :root {
+    /*==== grid system ====*/
+    --grid-side: 3.75rem;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  :root {
+    /*==== grid system ====*/
+    --grid-side: 4.6875rem;
+    --grid-columns-gap: 1.5625rem;
+    --grid-row: 1.5625rem;
+  }
+}
