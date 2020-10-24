@@ -12,3 +12,13 @@ export const setScrollWidth = () => {
     scrollWidth + 'px'
   )
 }
+
+export const lockScroll = () => {
+  document.body.style.overflow = 'hidden'
+  document.body.style.borderRight = 'var(--scroll-width) solid #fff'
+}
+
+export const unlockScroll = () => {
+  document.body.style.overflow = ''
+  document.body.style.borderRight = ''
+}

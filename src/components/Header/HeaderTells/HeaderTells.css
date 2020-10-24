@@ -1,0 +1,28 @@
+.header-tells {
+  margin-bottom: calc(var(--grid-row) * 3);
+}
+
+.header-tells__item {
+  display: block;
+  margin: 0 0 var(--grid-row);
+
+  font-family: var(--ff-title-heucha);
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--c-white);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+}
+
+@media screen and (min-width: 1024px) {
+  .header-tells {
+    grid-column-start: 3;
+    grid-column-end: 5;
+
+    transform: translateX(calc(-1 * var(--grid-columns-gap)));
+  }
+  .header-tells__item {
+    font-size: 1rem;
+  }
+}

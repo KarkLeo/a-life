@@ -3,11 +3,18 @@ import Slider from '../components/Slider/Slider'
 import GlobalStyle from '../components/GlobalStyle/GlobalStyle'
 import AboutUs from '../components/AboutUs/AboutUs'
 import Sprite from '../components/Sprite/Sprite'
+import Header from '../components/Header/Header'
+import ResponsiveSetter from '../components/Responsive/ResponsiveSetter'
 
 const RootIndex = ({ data }) => {
   return (
     <main>
       <GlobalStyle />
+      <ResponsiveSetter />
+      <Header
+        header={data.contentfulHeader}
+        category={data.allContentfulActivityCategory.edges}
+      />
       <Slider slides={data.allContentfulSlider.edges} />
       <AboutUs about={data.contentfulAboutUs} />
       <Sprite />
@@ -19,6 +26,29 @@ export default RootIndex
 
 export const pageQuery = graphql`
   query {
+    contentfulHeader {
+      mainLogo {
+        svg {
+          content
+        }
+      }
+      tagline
+      phoneNumbers
+      supportName
+      supportLogo {
+        svg {
+          content
+        }
+      }
+    }
+    allContentfulActivityCategory {
+      edges {
+        node {
+          title
+          id
+        }
+      }
+    }
     allContentfulSlider {
       edges {
         node {

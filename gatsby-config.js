@@ -34,6 +34,7 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sharp',
     'gatsby-background-image',
+    'gatsby-transformer-inline-svg',
     {
       resolve: `gatsby-plugin-google-fonts-v2`,
       options: {
@@ -57,6 +58,19 @@ module.exports = {
     {
       resolve: 'gatsby-source-contentful',
       options: contentfulConfig,
+    },
+    {
+      resolve: `gatsby-plugin-react-redux`,
+      options: {
+        pathToCreateStoreModule: './src/store/store',
+        serialize: {
+          space: 0,
+          isJSON: true,
+          unsafe: false,
+        },
+        cleanupOnClient: true,
+        windowKey: '__PRELOADED_STATE__',
+      },
     },
   ],
 }

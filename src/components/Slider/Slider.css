@@ -208,4 +208,9 @@
   .main-slide__title {
     font-size: 3.2rem;
   }
+
+  /*==== pagination ====*/
+  .main-slider .swiper-pagination-bullet::after {
+    height: 2px;
+  }
 }
