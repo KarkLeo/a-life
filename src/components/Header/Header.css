@@ -84,3 +84,14 @@
     transform: translateY(-0.5em);
   }
 }
+
+@media screen and (min-width: 1366px) {
+  .header {
+    padding: calc(var(--grid-row) * 2) var(--grid-side) 0;
+  }
+
+  /*==== header logo ====*/
+  .header-logo__tagline {
+    font-size: 1rem;
+  }
+}

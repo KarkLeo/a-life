@@ -200,7 +200,22 @@
   }
 }
 
+@media screen and (min-width: 1024px) {
+  .main-slide__body {
+    padding-top: calc(var(--grid-row) * 11);
+  }
+
+  /*==== pagination ====*/
+  .main-slider .swiper-pagination {
+    transform: translateY(50%) translateY(calc(var(--grid-row) * 4));
+  }
+}
+
 @media screen and (min-width: 1366px) {
+  .main-slide__body {
+    padding-top: calc(var(--grid-row) * 12);
+  }
+
   .main-slide__content {
     width: calc(var(--grid-column-with) * 4 + var(--grid-columns-gap) * 3);
   }
