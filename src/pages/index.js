@@ -5,6 +5,7 @@ import AboutUs from '../components/AboutUs/AboutUs'
 import Sprite from '../components/Sprite/Sprite'
 import Header from '../components/Header/Header'
 import ResponsiveSetter from '../components/Responsive/ResponsiveSetter'
+import Activity from '../components/Activity/Activity'
 
 const RootIndex = ({ data }) => {
   return (
@@ -17,6 +18,10 @@ const RootIndex = ({ data }) => {
       />
       <Slider slides={data.allContentfulSlider.edges} />
       <AboutUs about={data.contentfulAboutUs} />
+      <Activity
+        category={data.allContentfulActivityCategory.edges}
+        activity={data.allContentfulActivity.edges}
+      />
       <Sprite />
     </main>
   )
@@ -75,6 +80,29 @@ export const pageQuery = graphql`
         }
       }
       title
+    }
+    allContentfulActivity {
+      edges {
+        node {
+          category {
+            id
+            title
+          }
+          id
+          title
+          description {
+            json
+          }
+          image {
+            fluid(maxWidth: 1200, background: "rgb:000000") {
+              ...GatsbyContentfulFluid
+            }
+          }
+          people
+          level
+          time
+        }
+      }
     }
   }
 `

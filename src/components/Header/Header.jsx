@@ -8,7 +8,6 @@ import HeaderCategory from './HeaderCategory/HeaderCategory'
 import HeaderSupport from './HeaderSupport/HeaderSupport'
 
 const Header = ({ header, category }) => {
-  console.log(header)
   return (
     <div className="header">
       <div className="header__logo header-logo">
