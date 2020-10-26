@@ -22,3 +22,9 @@ export const unlockScroll = () => {
   document.body.style.overflow = ''
   document.body.style.borderRight = ''
 }
+
+export const scrollToActivity = (smooth) => {
+  document
+    .getElementById('activity')
+    .scrollIntoView({ behavior: smooth ? 'smooth' : 'auto' })
+}

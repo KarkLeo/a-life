@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import ActivityHeader from './ActivityHeader/ActivityHeader'
 import './Activity.css'
 import Responsive from '../Responsive/Responsive'
@@ -8,7 +8,7 @@ import MobileActivityBody from './MobileActivityBody/MobileActivityBody'
 
 const Activity = ({ category, activity }) => {
   return (
-    <div className="activity">
+    <div className="activity" id="activity">
       <Responsive options={['m', 'l', 'xl']}>
         <ActivityHeader category={category} />
       </Responsive>

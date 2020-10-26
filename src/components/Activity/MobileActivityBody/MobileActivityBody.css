@@ -3,3 +3,99 @@
   width: 100%;
   height: 100vh;
 }
+
+.mobile-activity-body__content {
+  padding-bottom: calc(var(--grid-row) * 12);
+}
+.mobile-activity-body__content::after {
+  content: '';
+  position: absolute;
+  top: 100vh;
+  left: 0;
+  right: 0;
+
+  width: 100%;
+  height: calc(var(--grid-row) * 5);
+
+  background: linear-gradient(
+    360deg,
+    rgba(0, 0, 0, 0.5) -34%,
+    rgba(0, 0, 0, 0) 100%
+  );
+
+  transform: translateY(-100%);
+}
+
+.mobile-activity-body__content-header {
+  position: absolute;
+  top: calc(var(--grid-row) * 4);
+  left: var(--grid-side);
+  right: var(--grid-side);
+  z-index: 9;
+
+  margin: 0;
+  padding: 0;
+  width: auto;
+
+  font-family: var(--ff-title-heucha);
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: var(--c-white);
+  text-align: center;
+}
+
+.mobile-activity-body__content-text {
+  margin: var(--grid-row) 0;
+  padding: 0 var(--grid-side);
+  box-sizing: border-box;
+
+  font-family: var(--ff-main-text);
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--c-black);
+}
+.mobile-activity-body__content-text p,
+.mobile-activity-body__content-text h6,
+.mobile-activity-body__content-text h5,
+.mobile-activity-body__content-text h4,
+.mobile-activity-body__content-text h3,
+.mobile-activity-body__content-text h2,
+.mobile-activity-body__content-text h1 {
+  margin: 0 0 var(--grid-row);
+}
+
+/*==== params block ====*/
+.mobile-activity-body__params {
+  position: absolute;
+  top: calc(100vh - var(--grid-row) * 2);
+  left: var(--grid-side);
+  right: var(--grid-side);
+  z-index: 9;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: var(--grid-columns-gap);
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.mobile-activity-body__params-item {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.mobile-activity-body__params-icon {
+  display: block;
+  width: var(--grid-row);
+  height: var(--grid-row);
+  margin-right: 0.6rem;
+}
+.mobile-activity-body__params-name {
+  font-family: var(--ff-main-text);
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--c-white);
+}

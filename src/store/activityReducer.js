@@ -12,6 +12,7 @@ const activityReducer = (state = initialState, action) => {
       return {
         ...state,
         activeCategory: action.categoryId,
+        activeActivity: null,
       }
     }
     case SET_ACTIVITY: {

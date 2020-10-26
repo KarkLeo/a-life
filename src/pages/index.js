@@ -22,6 +22,8 @@ const RootIndex = ({ data }) => {
         category={data.allContentfulActivityCategory.edges}
         activity={data.allContentfulActivity.edges}
       />
+      <AboutUs about={data.contentfulAboutUs} />
+
       <Sprite />
     </main>
   )

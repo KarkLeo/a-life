@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import Img from 'gatsby-image'
+import { setActivity } from '../../../store/activityReducer'
 
 import SwiperCore, { Scrollbar, A11y, EffectFade, Autoplay } from 'swiper'
 SwiperCore.use([Scrollbar, A11y, EffectFade, Autoplay])
@@ -12,6 +13,7 @@ const MobileActivityNavigation = ({
   activity,
   activeCategory,
   activeActivity,
+  setActivity,
 }) => {
   let [slider, setSlider] = useState(null)
   useEffect(() => {
@@ -38,7 +40,7 @@ const MobileActivityNavigation = ({
             >
               <button
                 className="mobile-activity-navigation__button"
-                onClick={() => console.log(node.title)}
+                onClick={() => setActivity(node.id)}
               >
                 <div className="mobile-activity-navigation__image-wrap">
                   <div className="mobile-activity-navigation__image-inner">
@@ -65,4 +67,6 @@ let mapStateToProps = (state) => ({
   activeActivity: state.activity.activeActivity,
 })
 
-export default connect(mapStateToProps, {})(MobileActivityNavigation)
+export default connect(mapStateToProps, { setActivity })(
+  MobileActivityNavigation
+)
