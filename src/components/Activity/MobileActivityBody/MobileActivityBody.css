@@ -15,7 +15,7 @@
   right: 0;
 
   width: 100%;
-  height: calc(var(--grid-row) * 5);
+  height: calc(var(--grid-row) * 8);
 
   background: linear-gradient(
     360deg,
@@ -26,9 +26,9 @@
   transform: translateY(-100%);
 }
 
-.mobile-activity-body__content-header {
+.mobile-activity-body__content-title {
   position: absolute;
-  top: calc(var(--grid-row) * 4);
+  top: calc(100vh - var(--grid-row) * 7);
   left: var(--grid-side);
   right: var(--grid-side);
   z-index: 9;

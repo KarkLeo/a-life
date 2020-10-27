@@ -18,7 +18,7 @@ const MobileActivityBody = ({ activity, activeCategory, activeActivity }) => {
       />
       {activeActivity && (
         <div className="mobile-activity-body__content">
-          <h3 className="mobile-activity-body__content-header">
+          <h3 className="mobile-activity-body__content-title">
             {active.title}
           </h3>
           <div className="mobile-activity-body__content-text">

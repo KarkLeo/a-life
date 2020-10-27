@@ -22,6 +22,7 @@
   border: 2px solid var(--c-white);
   border-radius: 2px;
   outline: none;
+  overflow-anchor: none;
 }
 
 .mobile-activity-navigation__image-wrap {
@@ -72,15 +73,18 @@
   right: var(--grid-side);
   bottom: 0;
 
-  width: auto;
+  width: calc(100% - var(--grid-side) * 2 - 2px);
 }
 
 .mobile-activity-navigation .swiper-scrollbar-drag {
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.75);
 }
 .mobile-activity-navigation .swiper-scrollbar-drag:hover {
   background: var(--c-white);
 }
 .mobile-activity-navigation .swiper-scrollbar {
-  background: rgba(255, 255, 255, 0.25);
+  box-sizing: content-box;
+
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid transparent;
 }

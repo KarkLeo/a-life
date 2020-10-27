@@ -4,14 +4,24 @@ import HeaderTells from '../HeaderTells/HeaderTells'
 import HeaderSupport from '../HeaderSupport/HeaderSupport'
 import { lockScroll, unlockScroll } from '../../../methods/scroll'
 import HeaderCategory from '../HeaderCategory/HeaderCategory'
+import { connect } from 'react-redux'
+import { setCategory } from '../../../store/activityReducer'
 
-const MobileMenu = ({ header, category }) => {
+const MobileMenu = ({ header, category, setCategory }) => {
   let [isOpenMenu, setOpenMenu] = useState(false)
 
   const toggleMenu = () => {
     if (isOpenMenu) unlockScroll()
     else lockScroll()
     setOpenMenu(!isOpenMenu)
+  }
+
+  const selectActivity = (id) => {
+    console.log('selectActivity')
+    console.log(id)
+    unlockScroll()
+    setOpenMenu(false)
+    setCategory(id)
   }
 
   return (
@@ -29,7 +39,7 @@ const MobileMenu = ({ header, category }) => {
       {isOpenMenu && (
         <div className="mobile-menu__content">
           <HeaderTells tells={header.phoneNumbers} />
-          <HeaderCategory category={category} />
+          <HeaderCategory category={category} selectActivity={selectActivity} />
           <HeaderSupport
             supportName={header.supportName}
             supportLogo={header.supportLogo}
@@ -39,5 +49,5 @@ const MobileMenu = ({ header, category }) => {
     </div>
   )
 }
-
-export default MobileMenu
+let mapStateToProps = (state) => ({})
+export default connect(mapStateToProps, { setCategory })(MobileMenu)
