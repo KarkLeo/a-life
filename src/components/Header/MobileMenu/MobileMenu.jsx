@@ -17,8 +17,6 @@ const MobileMenu = ({ header, category, setCategory }) => {
   }
 
   const selectActivity = (id) => {
-    console.log('selectActivity')
-    console.log(id)
     unlockScroll()
     setOpenMenu(false)
     setCategory(id)

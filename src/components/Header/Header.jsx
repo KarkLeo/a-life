@@ -6,8 +6,10 @@ import ReplaceBr from '../ui/ReplaceBR'
 import HeaderTells from './HeaderTells/HeaderTells'
 import HeaderCategory from './HeaderCategory/HeaderCategory'
 import HeaderSupport from './HeaderSupport/HeaderSupport'
+import { setCategory } from '../../store/activityReducer'
+import { connect } from 'react-redux'
 
-const Header = ({ header, category }) => {
+const Header = ({ header, category, setCategory }) => {
   return (
     <div className="header">
       <div className="header__logo header-logo">
@@ -24,7 +26,7 @@ const Header = ({ header, category }) => {
       </Responsive>
       <Responsive options={['m', 'l', 'xl']}>
         <HeaderTells tells={header.phoneNumbers} />
-        <HeaderCategory category={category} />
+        <HeaderCategory category={category} selectActivity={setCategory} />
         <HeaderSupport
           supportName={header.supportName}
           supportLogo={header.supportLogo}
@@ -33,5 +35,5 @@ const Header = ({ header, category }) => {
     </div>
   )
 }
-
-export default Header
+let mapStateToProps = (state) => ({})
+export default connect(mapStateToProps, { setCategory })(Header)
