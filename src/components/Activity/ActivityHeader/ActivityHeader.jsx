@@ -1,13 +1,23 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import './ActivityHeader.css'
+import { setCategory } from '../../../store/activityReducer'
 
-const ActivityHeader = ({ category }) => {
+const ActivityHeader = ({ category, activeCategory, setCategory }) => {
   return (
     <ul className="activity-header">
       {category.map(({ node }) => (
-        <li key={node.id} className="">
-          <button className="">{node.title}</button>
+        <li key={node.id} className="activity-header__item">
+          <button
+            className={`activity-header__button ${
+              activeCategory === node.id
+                ? 'activity-header__button--active'
+                : ''
+            }`}
+            onClick={() => setCategory(node.id)}
+          >
+            {node.title}
+          </button>
         </li>
       ))}
     </ul>
@@ -15,7 +25,9 @@ const ActivityHeader = ({ category }) => {
 }
 
 let mapStateToProps = (state) => {
-  return {}
+  return {
+    activeCategory: state.activity.activeCategory,
+  }
 }
 
-export default connect(mapStateToProps, {})(ActivityHeader)
+export default connect(mapStateToProps, { setCategory })(ActivityHeader)

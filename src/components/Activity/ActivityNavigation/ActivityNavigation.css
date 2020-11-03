@@ -1,0 +1,91 @@
+.activity-navigation {
+  position: absolute;
+  bottom: var(--grid-row);
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+.activity-navigation__item {
+  display: flex;
+  height: auto;
+}
+
+.activity-navigation__button {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+
+  background-color: var(--c-white);
+  border: 2px solid var(--c-white);
+  border-radius: 2px;
+  outline: none;
+  overflow-anchor: none;
+}
+
+.activity-navigation__image-wrap {
+  position: relative;
+
+  display: block;
+  width: 100%;
+  height: 0;
+  padding-top: 62.5%;
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+
+.activity-navigation__image-inner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.activity-navigation__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.activity-navigation__name {
+  height: 100%;
+  width: 100%;
+  padding: 0.6em 1.2em;
+  box-sizing: border-box;
+  margin-top: auto;
+
+  font-family: var(--ff-title-heucha);
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--c-black);
+  text-align: left;
+}
+
+/*==== scrollbar ====*/
+
+.activity-navigation__slider {
+  padding-bottom: var(--grid-row);
+}
+.activity-navigation .swiper-scrollbar {
+  left: var(--grid-side);
+  right: var(--grid-side);
+  bottom: 0;
+
+  width: calc(100% - var(--grid-side) * 2 - 2px);
+}
+
+.activity-navigation .swiper-scrollbar-drag {
+  background: rgba(255, 255, 255, 0.75);
+}
+.activity-navigation .swiper-scrollbar-drag:hover {
+  background: var(--c-white);
+}
+.activity-navigation .swiper-scrollbar {
+  box-sizing: content-box;
+
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid transparent;
+}

@@ -8,6 +8,8 @@ import MobileActivityBody from './MobileActivityBody/MobileActivityBody'
 import { connect } from 'react-redux'
 import { scrollToActivity } from '../../methods/scroll'
 import { setCategory } from '../../store/activityReducer'
+import ActivityBody from './ActivityBody/ActivityBody'
+import ActivityNavigation from './ActivityNavigation/ActivityNavigation'
 
 const Activity = ({
   category,
@@ -27,6 +29,8 @@ const Activity = ({
     <div className="activity" id="activity">
       <Responsive options={['m', 'l', 'xl']}>
         <ActivityHeader category={category} />
+        <ActivityBody activity={activity} />
+        <ActivityNavigation activity={activity} />
       </Responsive>
       <Responsive options={['xs', 's']}>
         <MobileActivityHeader category={category} />
