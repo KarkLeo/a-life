@@ -23,6 +23,7 @@
   border-radius: 2px;
   outline: none;
   overflow-anchor: none;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
 }
 
 .mobile-activity-navigation__image-wrap {
