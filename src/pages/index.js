@@ -6,6 +6,7 @@ import Sprite from '../components/Sprite/Sprite'
 import Header from '../components/Header/Header'
 import ResponsiveSetter from '../components/Responsive/ResponsiveSetter'
 import Activity from '../components/Activity/Activity'
+import Services from '../components/Services/Services'
 
 const RootIndex = ({ data }) => {
   return (
@@ -22,6 +23,7 @@ const RootIndex = ({ data }) => {
         category={data.allContentfulActivityCategory.edges}
         activity={data.allContentfulActivity.edges}
       />
+      <Services services={data.allContentfulService.edges} />
       <AboutUs about={data.contentfulAboutUs} />
 
       <Sprite />
@@ -103,6 +105,23 @@ export const pageQuery = graphql`
           people
           level
           time
+        }
+      }
+    }
+    allContentfulService {
+      edges {
+        node {
+          id
+          isMain
+          name
+          description {
+            description
+          }
+          icon {
+            svg {
+              dataURI
+            }
+          }
         }
       }
     }

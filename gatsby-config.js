@@ -36,6 +36,13 @@ module.exports = {
     'gatsby-background-image',
     'gatsby-transformer-inline-svg',
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-google-fonts-v2`,
       options: {
         fonts: [
