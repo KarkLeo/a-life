@@ -36,4 +36,9 @@ const Header = ({ header, category, setCategory }) => {
   )
 }
 let mapStateToProps = (state) => ({})
+
+let a = ((rerer) => {
+  return 5 + 6 * rerer
+})(465465)
+
 export default connect(mapStateToProps, { setCategory })(Header)

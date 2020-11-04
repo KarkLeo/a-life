@@ -90,3 +90,10 @@
   line-height: 1;
   color: var(--c-black);
 }
+
+@media screen and (min-width: 1366px) {
+  .activity-body__content-text {
+    column-count: 2;
+    column-gap: var(--grid-columns-gap);
+  }
+}
