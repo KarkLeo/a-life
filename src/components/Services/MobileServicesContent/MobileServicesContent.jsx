@@ -16,7 +16,7 @@ const MobileServicesContent = ({ data }) => {
         data
           .filter(({ node }) => !node.isMain)
           .map(({ node }) => <ServicesItem key={node.id} item={node} />)}
-      }<button onClick={() => setShowAll(!showAll)}>больше</button>
+      <button onClick={() => setShowAll(!showAll)}>больше</button>
     </div>
   )
 }
