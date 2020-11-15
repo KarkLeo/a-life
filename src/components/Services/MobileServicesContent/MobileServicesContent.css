@@ -1,0 +1,26 @@
+.mobile-services-content__more-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: calc(var(--grid-row) * 2);
+  margin: 0;
+  padding: 0;
+
+  background-color: transparent;
+  border: none;
+  outline: none;
+  overflow-anchor: auto;
+}
+.mobile-services-content__more-button--active {
+  overflow-anchor: none;
+}
+.mobile-services-content__more-button--active
+  .mobile-services-content__more-button-icon {
+  transform: scaleY(-1);
+}
+
+.mobile-services-content__more-button-icon {
+  width: auto;
+  height: 100%;
+}
