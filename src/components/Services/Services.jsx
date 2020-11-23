@@ -3,6 +3,8 @@ import './Services.css'
 import { graphql, useStaticQuery } from 'gatsby'
 import BackgroundImage from 'gatsby-background-image'
 import MobileServicesContent from './MobileServicesContent/MobileServicesContent'
+import ServicesContent from './ServicesContent/ServicesContent'
+import Responsive from '../Responsive/Responsive'
 
 const Services = ({ services }) => {
   const bg = useStaticQuery(graphql`
@@ -25,7 +27,12 @@ const Services = ({ services }) => {
       >
         <div className="services__body">
           <h2 className="services__title">Наши услуги</h2>
-          <MobileServicesContent data={services} />
+          <Responsive options={['xs', 's']}>
+            <MobileServicesContent data={services} />
+          </Responsive>
+          <Responsive options={['m', 'l', 'xl']}>
+            <ServicesContent data={services} />
+          </Responsive>
         </div>
       </BackgroundImage>
     </div>

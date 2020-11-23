@@ -7,7 +7,7 @@ const MobileServicesContent = ({ data }) => {
   let [showAll, setShowAll] = useState(false)
 
   return (
-    <div>
+    <div className="mobile-services-content">
       {data
         .filter(({ node }) => node.isMain)
         .map(({ node }) => (
