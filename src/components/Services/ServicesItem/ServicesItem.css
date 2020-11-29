@@ -45,3 +45,25 @@
   color: var(--c-white);
   line-height: var(--grid-row);
 }
+
+@media screen and (min-width: 1366px) {
+  .services-item {
+    flex-direction: column;
+  }
+  .services-item:not(:last-child) {
+    margin-bottom: 0;
+  }
+  .services-item__image-wrap {
+    margin-bottom: var(--grid-row);
+  }
+
+  .services-item__name {
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (min-width: 1900px) {
+  .services-item__description {
+    font-size: 1rem;
+  }
+}

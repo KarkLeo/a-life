@@ -54,3 +54,21 @@
 
   background-color: rgba(0, 0, 0, 0.35);
 }
+
+@media screen and (min-width: 1366px) {
+  .services-content__list {
+    display: grid;
+    grid-template-columns: repeat(
+      5,
+      calc((100% - 4 * var(--grid-columns-gap)) / 5)
+    );
+  }
+  .services-content__list .services-item:nth-child(5n - 4),
+  .services-content__list .services-item:nth-child(5n - 3),
+  .services-content__list .services-item:nth-child(5n - 2),
+  .services-content__list .services-item:nth-child(5n - 1),
+  .services-content__list .services-item:nth-child(5n) {
+    grid-column-start: auto;
+    grid-column-end: auto;
+  }
+}

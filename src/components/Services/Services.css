@@ -47,7 +47,13 @@
 }
 
 @media screen and (min-width: 1024px) {
+  .services__body {
+    padding-top: calc(var(--grid-row) * 4);
+  }
   .services__body::after {
     background-color: rgba(0, 0, 0, 0.5);
+  }
+  .services__title {
+    margin-bottom: calc(var(--grid-row) * 3);
   }
 }
